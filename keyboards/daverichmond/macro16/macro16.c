@@ -22,4 +22,22 @@ led_config_t g_led_config = { {
 	LED_FLAG_UNDERGLOW, LED_FLAG_UNDERGLOW, LED_FLAG_UNDERGLOW, LED_FLAG_UNDERGLOW, LED_FLAG_UNDERGLOW,
 } };
 
+void rgb_matrix_indicators_kb(void){
+	if(host_keyboard_led_state().caps_lock){
+		rgb_matrix_set_color(0, 255, 0, 0);
+	} else {
+		rgb_matrix_set_color(0, 0, 0, 0);
+	}
+	if(host_keyboard_led_state().scroll_lock){
+		rgb_matrix_set_color(1, 255, 0, 0);
+	} else {
+		rgb_matrix_set_color(1, 0, 0, 0);
+	}
+	if(host_keyboard_led_state().num_lock){
+		rgb_matrix_set_color(2, 255, 0, 0);
+	} else {
+		rgb_matrix_set_color(2, 0, 0, 0);
+	}
+}
+
 #endif
